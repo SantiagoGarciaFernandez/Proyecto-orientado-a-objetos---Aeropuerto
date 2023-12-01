@@ -9,27 +9,29 @@ using namespace std;
 int main(){
     
     // Abrir archivo de aeropuertos y datos de vuelos
-    string line;
-    ifstream myfile ("aeropuertos.txt");{
-        if (myfile.is_open())
-        {
-            while(getline(myfile, line)) {
-            cout << line << endl;
-            }
-            myfile.close();
-        }
-    } 
+    std::string line;
+    std::ifstream aeropuertosFile("aeropuertos.txt");
 
-    string line1;
-    ifstream myfile ("datosVuelos.txt");{
-        if (myfile.is_open())
-        {
-            while(getline(myfile, line1)) {
-            cout << line1 << endl;
-            }
-            myfile.close();
+    if (aeropuertosFile.is_open()) {
+        while (getline(aeropuertosFile, line)) {
+            std::cout << line << std::endl;
         }
-    } 
+        aeropuertosFile.close();
+    } else {
+        std::cerr << "Unable to open aeropuertos.txt\n";
+    }
+
+    std::string line1;
+    std::ifstream vuelosFile("datosVuelosC-1.txt");
+
+    if (vuelosFile.is_open()) {
+        while (getline(vuelosFile, line1)) {
+            std::cout << line1 << std::endl;
+        }
+        vuelosFile.close();
+    } else {
+        std::cerr << "Unable to open datosVuelosC-1.txt\n";
+    }
 
     Pasajero pasajero("Sergio Perez", 33, "Mexico", 1);
     Aeropuerto cdmx("Benito Juarez", "Ciudad de Mexio", 2, 20);

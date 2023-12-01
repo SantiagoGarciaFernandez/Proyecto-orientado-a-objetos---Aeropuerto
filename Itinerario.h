@@ -13,7 +13,7 @@ class Itinerario{
         string gate;
         float precio;
         Pasajero asiento;
-        string horarios[18]; 
+        string horarios[19]; 
 
     public:
         //Constructor de Itinerario
@@ -126,7 +126,7 @@ class Itinerario{
             cout<<"";
 
             //*** For loop to traverse each index in the array and print every value ***///
-              for (int i = 0; i < 18; ++i){
+              for (int i = 0; i < 19; ++i){
                 info += horarios[i] + "\n";
             }
             return info;  
